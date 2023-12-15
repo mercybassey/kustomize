@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd-service # The name of the service
+spec:
+  type: ClusterIP # Specifies that this service is of type ClusterIP
+  selector:
+    app: httpd # Selects the pods with the label 'app: httpd'
+  ports:
+    - protocol: TCP
+      port: 80 # The port that the service exposes
+      targetPort: 80 # The target port on the container to send traffic to

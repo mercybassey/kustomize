@@ -1,0 +1,19 @@
+resources:
+  - ../../base
+
+namePrefix: prod-
+
+namespace: prod
+
+commonLabels:
+  env: production
+
+patches:
+  - target:
+      kind: Deployment
+      name: httpd
+    path: deployment-patch.yaml
+  - target:
+      kind: Service
+      name: httpd-service
+    path: service-patch.yaml
